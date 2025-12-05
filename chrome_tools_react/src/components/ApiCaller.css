@@ -1,0 +1,124 @@
+.api-caller {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+  text-align: left;
+}
+
+.api-caller h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #646cff;
+}
+
+.controls {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.controls button {
+  padding: 0.8em 2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.controls button:hover:not(:disabled) {
+  background-color: #535bf2;
+}
+
+.controls button:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #ff4444;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.token-display {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.token-display h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #646cff;
+}
+
+.token {
+  display: block;
+  padding: 0.8rem;
+  background-color: #242424;
+  border-radius: 4px;
+  word-break: break-all;
+  font-family: 'Courier New', monospace;
+  color: #4ade80;
+  font-size: 0.9em;
+}
+
+.result-section {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #1a1a1a;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+.result-section h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #646cff;
+}
+
+.result-json {
+  background-color: #242424;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 0.85em;
+  line-height: 1.5;
+  color: #e0e0e0;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+@media (prefers-color-scheme: light) {
+  .token-display,
+  .result-section {
+    background-color: #f9f9f9;
+    border-color: #ddd;
+  }
+
+  .token {
+    background-color: #fff;
+    color: #059669;
+  }
+
+  .result-json {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .api-caller h2,
+  .token-display h3,
+  .result-section h3 {
+    color: #646cff;
+  }
+}
+

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Tools React",
+  "name": "测试工具",
   "version": "1.0.0",
   "description": "React 应用 Chrome 扩展程序",
   "action": {
@@ -18,7 +18,8 @@
     "tabs"
   ],
   "host_permissions": [
-    "<all_urls>"
+    "https://qrcode.sh.gov.cn/*",
+    "https://suishenmafront1.sh.gov.cn/*"
   ]
 }
 
