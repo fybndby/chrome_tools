@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './ApiCaller.css';
 
 interface FirstApiResponse {
@@ -56,30 +57,24 @@ function ApiCaller() {
     setStep2Result('');
 
     try {
-      const response = await fetch(
+      const response = await axios.post<FirstApiResponse>(
         'https://qrcode.sh.gov.cn/open/cloud/redirectSceneforAppletByTb',
         {
-          method: 'POST',
+          qrcodeInfo:
+            'https://qrcode.sh.gov.cn/0036MDAwMkEwQ1QxOTkyNzc3MDU4MTYzOTc4MjQwMzAwNUdFN1g4',
+          mw: 'LVx1%2BYF8lDHR38dZv1WvQN8QubOpBMyn3d8tFUHZwd71eAMvTztidX5tZ9QvCSPzVTR0e%2FE7U5Rzv%2FBdRXMgZ1rwWVzDY0tt%2B5i7kSORZEFfE9WjjQxr0pWLm8VKoH8h8GzPkhaDhXL%2Fie0QSc24gg%3D%3D',
+          from: 'wx',
+        },
+        {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            qrcodeInfo:
-              'https://qrcode.sh.gov.cn/0036MDAwMkEwQ1QxOTkyNzc3MDU4MTYzOTc4MjQwMzAwNUdFN1g4',
-            mw: 'LVx1%2BYF8lDHR38dZv1WvQN8QubOpBMyn3d8tFUHZwd71eAMvTztidX5tZ9QvCSPzVTR0e%2FE7U5Rzv%2FBdRXMgZ1rwWVzDY0tt%2B5i7kSORZEFfE9WjjQxr0pWLm8VKoH8h8GzPkhaDhXL%2Fie0QSc24gg%3D%3D',
-            from: 'wx',
-          }),
         }
       );
 
       console.log(222, response);
 
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data: FirstApiResponse = await response.json();
+      const data = response.data;
       const resultJson = JSON.stringify(data, null, 2);
       setStep1Result(resultJson);
 
@@ -106,25 +101,20 @@ function ApiCaller() {
   // 调用第二个接口
   const callSecondApi = async (token: string) => {
     try {
-      const response = await fetch(
+      const response = await axios.post<SecondApiResponse>(
         'https://suishenmafront1.sh.gov.cn/guest_reg/place-v1/accessControlOpen',
         {
-          method: 'POST',
+          token: token,
+          from: 'wx',
+        },
+        {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({
-            token: token,
-            from: 'wx',
-          }),
         }
       );
 
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-
-      const data: SecondApiResponse = await response.json();
+      const data = response.data;
       setStep2Result(JSON.stringify(data, null, 2));
     } catch (err) {
       setError(
