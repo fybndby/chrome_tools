@@ -1,0 +1,31 @@
+.app-layout {
+  min-height: 100vh;
+}
+
+.app-sider {
+  background: #001529;
+}
+
+.logo {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+.app-content-layout {
+  background: #f0f2f5;
+}
+
+.app-content {
+  margin: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 8px;
+  min-height: calc(100vh - 48px);
+}
+

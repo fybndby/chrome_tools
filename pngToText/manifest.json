@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Hello Word",
+  "name": "打卡提醒1",
   "version": "1.0.0",
   "description": "打开插件显示 Hello Word",
   "action": {
@@ -15,7 +15,8 @@
     "service_worker": "background.js"
   },
   "permissions": [
-    "tabs"
+    "tabs",
+    "alarms"
   ],
   "web_accessible_resources": [
     {
