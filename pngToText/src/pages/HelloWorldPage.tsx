@@ -1,6 +1,17 @@
 import { Card, Button, Space } from 'antd';
+import { useEffect, useState } from 'react';
 
 function HelloWorldPage() {
+  const [qrcodeUrl, setQrcodeUrl] = useState('/qrcode.png');
+
+  useEffect(() => {
+    // 在 Chrome 扩展环境中，使用 chrome.runtime.getURL 获取正确的路径
+    const url = chrome?.runtime?.getURL('qrcode.png');
+    if (url) {
+      setQrcodeUrl(url);
+    }
+  }, []);
+
   const handleCheckIn = () => {
     window.close();
   };
@@ -9,14 +20,14 @@ function HelloWorldPage() {
     <Card style={{ width: 400, textAlign: 'center' }}>
       <Space size="large" style={{ width: '100%' }}>
         <img 
-          src="./qrcode.png"
+          src={qrcodeUrl}
           alt="打卡图片"
-          style={{ 
-            width: '200px', 
-            height: '200px', 
+          style={{
+            width: '200px',
+            height: '200px',
             objectFit: 'contain',
             marginTop: '20px'
-          }} 
+          }}
         />
         <Button 
           type="primary" 

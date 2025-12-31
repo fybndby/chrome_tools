@@ -20,7 +20,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["src/index.html"],
+      "resources": ["index.html", "qrcode.png", "assets/*"],
       "matches": ["<all_urls>"]
     }
   ]
