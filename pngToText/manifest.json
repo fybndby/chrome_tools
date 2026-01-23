@@ -1,15 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "打卡9.30",
+  "name": "打卡",
   "version": "1.0.0",
-  "description": "打开插件显示 Hello Word",
+  "description": "打卡提醒工具",
   "action": {
     "default_icon": {
       "16": "icon16.png",
       "48": "icon48.png",
       "128": "icon128.png"
     },
-    "default_title": "打开 Hello Word"
+    "default_title": "打卡"
   },
   "background": {
     "service_worker": "background.js"
