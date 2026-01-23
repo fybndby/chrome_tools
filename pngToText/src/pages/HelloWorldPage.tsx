@@ -1,5 +1,6 @@
-import { Card, Button, Space } from 'antd';
+import { Card, Button } from 'antd';
 import { useEffect, useState } from 'react';
+import './HelloWorldPage.css';
 
 function HelloWorldPage() {
   const [qrcodeUrl, setQrcodeUrl] = useState('/qrcode.png');
@@ -17,32 +18,30 @@ function HelloWorldPage() {
   };
 
   return (
-    <Card style={{ width: 600 }}>
-      <Space size="large" style={{ width: '100%' }}>
-        <img
-          src={qrcodeUrl}
-          alt="打卡图片"
-          style={{
-            width: '400px',
-            objectFit: 'contain',
-            marginTop: '20px'
-          }}
-        />
-        <div>
+    <div className="hello-world-page">
+      <Card className="checkin-card">
+        <div className="card-header">
+          <h2 className="card-title">早上好，请先扫码打卡</h2>
+        </div>
+        <div className="qrcode-container">
+          <img
+            src={qrcodeUrl}
+            alt="打卡图片"
+            className="qrcode-image"
+          />
+        </div>
+        <div className="button-container">
           <Button
             type="primary"
             size="large"
             onClick={handleCheckIn}
-            style={{
-              marginBottom: '20px',
-              width: '120px'
-            }}
+            className="checkin-button"
           >
             确认打卡
           </Button>
         </div>
-      </Space>
-    </Card>
+      </Card>
+    </div>
   );
 }
 
