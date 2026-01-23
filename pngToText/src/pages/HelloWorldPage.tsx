@@ -13,8 +13,27 @@ function HelloWorldPage() {
     }
   }, []);
 
-  const handleCheckIn = () => {
-    window.close();
+  const handleCheckIn = async () => {
+    // 使用 Chrome Extension API 关闭当前标签页
+    if (chrome?.tabs) {
+      try {
+        // 查询当前窗口的当前标签页
+        const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (tabs && tabs.length > 0 && tabs[0].id) {
+          await chrome.tabs.remove(tabs[0].id);
+          return;
+        }
+      } catch (error) {
+        console.error('关闭标签页失败:', error);
+      }
+    }
+
+    // 备用方案：尝试使用 window.close()
+    try {
+      window.close();
+    } catch (error) {
+      console.error('无法关闭窗口:', error);
+    }
   };
 
   return (
