@@ -26,7 +26,7 @@ chrome.action.onClicked.addListener((tab) => {
 function setAlarmForTomorrow() {
   const now = new Date();
   const targetTime = new Date();
-  targetTime.setHours(17, 2, 0, 0);
+  targetTime.setHours(9, 30, 0, 0);
   if (now >= targetTime) {
     targetTime.setDate(targetTime.getDate() + 1);
   }

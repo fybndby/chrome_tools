@@ -17,29 +17,30 @@ function HelloWorldPage() {
   };
 
   return (
-    <Card style={{ width: 400, textAlign: 'center' }}>
+    <Card style={{ width: 600 }}>
       <Space size="large" style={{ width: '100%' }}>
-        <img 
+        <img
           src={qrcodeUrl}
           alt="打卡图片"
           style={{
-            width: '200px',
-            height: '200px',
+            width: '400px',
             objectFit: 'contain',
             marginTop: '20px'
           }}
         />
-        <Button 
-          type="primary" 
-          size="large" 
-          onClick={handleCheckIn}
-          style={{ 
-            marginBottom: '20px',
-            width: '120px' 
-          }}
-        >
-          确认打卡
-        </Button>
+        <div>
+          <Button
+            type="primary"
+            size="large"
+            onClick={handleCheckIn}
+            style={{
+              marginBottom: '20px',
+              width: '120px'
+            }}
+          >
+            确认打卡
+          </Button>
+        </div>
       </Space>
     </Card>
   );
