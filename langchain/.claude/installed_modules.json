@@ -1,0 +1,94 @@
+{
+  "modules": {
+    "dev": {
+      "module": "dev",
+      "status": "success",
+      "operations": [
+        {
+          "type": "merge_dir",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "run_command",
+          "status": "success"
+        }
+      ],
+      "installed_at": "2026-02-03T09:22:42.069052"
+    },
+    "essentials": {
+      "module": "essentials",
+      "status": "success",
+      "operations": [
+        {
+          "type": "merge_dir",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        }
+      ],
+      "installed_at": "2026-02-03T09:22:51.256889"
+    },
+    "omo": {
+      "module": "omo",
+      "status": "success",
+      "operations": [
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        },
+        {
+          "type": "copy_file",
+          "status": "success"
+        }
+      ],
+      "installed_at": "2026-02-03T09:22:51.264595"
+    }
+  },
+  "updated_at": "2026-02-03T09:22:51.271195"
+}
